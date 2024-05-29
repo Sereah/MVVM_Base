@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-    
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="message"
             type="com.lunacattus.my_base.model.ChatMessage" />
     </data>
-    
+
     <LinearLayout
         android:id="@+id/message_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="@{message.gravity}"
         android:orientation="vertical"
-        android:padding="8dp"
-        android:gravity="@{message.gravity}">
+        android:padding="8dp">
 
         <TextView
+            android:id="@+id/sender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sender"
             android:text="@{message.sender}"
-            android:textStyle="bold"
+            android:textColor="#000"
+            android:textIsSelectable="true"
             android:textSize="12sp"
-            android:textColor="#000" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/messageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/message_background"
+            android:backgroundTint="@{message.sender == `User` ? @color/user_message_background : @color/model_message_background}"
             android:padding="8dp"
-            android:text="@{message.message}"
             android:textColor="#000"
+            android:textIsSelectable="true"
             android:textSize="16sp"
-            android:backgroundTint="@{message.sender == `User` ? @color/user_message_background : @color/model_message_background}" />
+            app:setMarkdownText="@{message.message}" />
     </LinearLayout>
 
 </layout>

@@ -34,9 +34,9 @@
             android:layout_height="60dp"
             android:background="#E6E6FA"
             android:padding="5dp"
-            app:layout_constraintHeight_percent="0.08"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.08"
             app:layout_constraintStart_toStartOf="parent">
 
             <EditText

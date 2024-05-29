@@ -59,6 +59,8 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.50"
 
     implementation "com.google.ai.client.generativeai:generativeai:0.6.0"
+
+    implementation 'io.noties.markwon:core:4.6.2'
 }
 
 kapt {
